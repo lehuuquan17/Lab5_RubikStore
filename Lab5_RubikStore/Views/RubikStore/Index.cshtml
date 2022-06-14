@@ -1,0 +1,32 @@
+﻿
+@{ ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<h2>Index</h2>
+<div class="row">
+    @foreach (var item in Model)
+    {
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <div class="panel panel-default">
+        <div class="panel panel-heading">
+            <strong>@item.ten</strong>
+        </div>
+        <div class="panel-body">
+            <p><strong>Loại : </strong>@item.maloai</p>
+            <p><strong>Mô tả : </strong>@item.mota</p>
+            <p><strong>Hãng : </strong>@item.hang</p>
+            <p><strong>Giá : </strong>@item.gia</p>
+            <p><img src="@item.hinh" width="270S" alt="thumnail" /></p>
+            <p><strong>Còn lại : </strong>@item.soluongton</p>
+            <p><strong>Ngày cập nhật : </strong>@item.ngaycapnhat</p>
+        </div>
+        <div class="panel-footer clearfix">
+            <div class="pull-right">
+                <div class="DatMua">
+                    <a class="btn btn-success" href="@Url.Action("ThemGioHang","GioHang",new {@id = item.id,@strURL = Request.Url.ToString()} )">Đặt Mua</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>}
+</div>

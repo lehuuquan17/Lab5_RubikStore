@@ -1,0 +1,65 @@
+﻿@model Lab5_RubikStore.Models.GioHang
+
+@{
+    ViewBag.Title = "XoaGiohang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>XoaGiohang</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>GioHang</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tensp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tensp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hinhsp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hinhsp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.soluong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.soluong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dthanhtien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dthanhtien)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
